@@ -15,16 +15,20 @@ import (
 
 func newRouter() *httprouter.Router {
 	mux := httprouter.New()
+	ytApiKey := os.Getenv("YOUTUBE_API_KEY")
+	ytChannelID := os.Getenv("YOUTUBE_CHANNEL_ID")
 
-	mux.GET("/youtube/channel/stats", getChannelStats())
+	if ytApiKey == "" {
+		log.Fatal("youtube API key not provided")
+	}
+
+	if ytChannelID == "" {
+		log.Fatal("youtube channel ID not provided")
+	}
+
+	mux.GET("/youtube/channel/stats", getChannelStats(ytApiKey, ytChannelID))
 
 	return mux
-}
-
-func getChannelStats() httprouter.Handle {
-	return func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-		w.Write([]byte("response!"))
-	}
 }
 
 func main() {
