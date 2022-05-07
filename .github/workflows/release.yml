@@ -56,6 +56,14 @@ jobs:
         with:
           version: v3.8.1
 
+      - name: custom packaging
+        run: |
+          VERSION=${{ github.event.release.tag_name }}
+          echo "VERSION=${VERSION:1}" >> $GITHUB_ENV
+          rm -rf .cr-release-packages
+          mkdir -p .cr-release-packages
+          helm package charts/youtube-stats-chart --app-version=$GITHUB_ENV --version=$GITHUB_ENV --destination=.cr-release-packages
+
       - name: Run chart-releaser
         # switch back to helm/chart-releaser-action if this contribution is ever merged
         uses: askcloudarchitech/chart-releaser-action@skip-packaging-option
