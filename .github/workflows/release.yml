@@ -57,8 +57,7 @@ jobs:
           version: v3.8.1
 
       - name: Run chart-releaser
-        # switch back to helm/chart-releaser-action when #60 is fixed
-        # https://github.com/helm/chart-releaser-action/issues/60
-        uses: luisico/chart-releaser-action@on-tags
+        # switch back to helm/chart-releaser-action if this contribution is ever merged
+        uses: askcloudarchitech/chart-releaser-action@skip-packaging-option
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
