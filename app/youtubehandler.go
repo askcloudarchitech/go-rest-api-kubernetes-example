@@ -15,6 +15,7 @@ type YoutubeStats struct {
 	Subscribers int    `json:"subscribers"`
 	ChannelName string `json:"channelName"`
 	Views       int    `json:"views"`
+	SomeJunk    string `json:"somejunk"`
 }
 
 func getChannelStats(k string, channelID string) httprouter.Handle {
@@ -43,6 +44,7 @@ func getChannelStats(k string, channelID string) httprouter.Handle {
 				Subscribers: int(val.Statistics.SubscriberCount),
 				ChannelName: val.Snippet.Title,
 				Views:       int(val.Statistics.ViewCount),
+				SomeJunk:    "howdy!",
 			}
 		} else {
 			w.WriteHeader(http.StatusBadRequest)
