@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   youtube-stats-chart:
   - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2022-05-09T23:49:38.771127441Z"
+    description: Youtube stats chart
+    digest: 3c6a174c7c310eeecd0481213ebd7a795e9e471dfafe299950e4cd2bc2562caf
+    name: youtube-stats-chart
+    type: application
+    urls:
+    - https://github.com/askcloudarchitech/go-rest-api-kubernetes-example/releases/download/youtube-stats-chart-1.1.1/youtube-stats-chart-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     appVersion: 1.1.0
     created: "2022-05-07T18:07:20.703375823Z"
     description: Youtube stats chart
@@ -41,4 +51,4 @@ entries:
     urls:
     - https://github.com/askcloudarchitech/go-rest-api-kubernetes-example/releases/download/youtube-stats-chart-0.1.0/youtube-stats-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-07T18:07:20.703397523Z"
+generated: "2022-05-09T23:49:38.771344944Z"
