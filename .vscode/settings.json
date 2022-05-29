@@ -1,0 +1,11 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "cmd": "ps -Ac | grep -m1 'app$' | awk '{print $1}' | xargs -r kill -9 && go run ./app/./...",
+        "isAsync": true,
+        "match": "\\.go$"
+      }
+    ]
+  }
+}

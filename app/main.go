@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -25,9 +26,9 @@ func newRouter() *httprouter.Router {
 	if ytChannelID == "" {
 		log.Fatal("youtube channel ID not provided")
 	}
-
+	fmt.Println("this message should print on startup, after saving")
 	mux.GET("/youtube/channel/stats", getChannelStats(ytApiKey, ytChannelID))
-
+	mux.GET("/add/:num1/:num2", myDescriptiveAddFunction)
 	return mux
 }
 
